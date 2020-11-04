@@ -42,14 +42,14 @@ public class OneToOneMapping
 				System.out.println("Enter Hobby: ");
 				String hobby = scan.next();
 				
-				Employee emp = new Employee();
+				EmployeeDetails emp = new EmployeeDetails();
 				
-				emp.setName(name);
-				emp.setMail(mail);
-				emp.setEmpdet(new EmployeeDetails(salary,location,hobby));
+				emp.setSalary(salary);
+				emp.setWorkLocation(location);
+				emp.setHobby(hobby);
+				emp.setEmp(new Employee(name,mail));
 				
 				session.save(emp);
-				System.out.println(emp);
 
 			}
 			transaction.commit();

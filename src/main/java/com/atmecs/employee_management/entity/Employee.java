@@ -25,10 +25,6 @@ public class Employee
 	@Column(name = "mail")
 	private String mail;
 	
-	@JoinColumn(name ="p_id")
-	@OneToOne(cascade = CascadeType.ALL)
-	private EmployeeDetails empdet;
-
 	public int getId() 
 	{
 		return id;
@@ -59,21 +55,10 @@ public class Employee
 		this.mail = mail;
 	}
 
-	public EmployeeDetails getEmpdet() 
-	{
-		return empdet;
-	}
-
-	public void setEmpdet(EmployeeDetails empdet)
-	{
-		this.empdet = empdet;
-	}
-
-	public Employee(String name, String mail, EmployeeDetails empdet) 
+	public Employee(String name, String mail) 
 	{
 		this.name = name;
 		this.mail = mail;
-		this.empdet = empdet;
 	}
 
 	public Employee() 
