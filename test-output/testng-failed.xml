@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.atmecs.employee_management.operations.OneToOneMapping">
+      <class name="com.atmecs.employee_management.operations.OneToManyMapping">
         <methods>
-          <include name="oneToOneMapping"/>
+          <include name="addRecord"/>
         </methods>
-      </class> <!-- com.atmecs.employee_management.operations.OneToOneMapping -->
+      </class> <!-- com.atmecs.employee_management.operations.OneToManyMapping -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

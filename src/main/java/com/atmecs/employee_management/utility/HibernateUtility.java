@@ -13,7 +13,7 @@ public class HibernateUtility
 	public static Session getHibernateSession()
 	{
 		final SessionFactory factory = new Configuration().addAnnotatedClass(Employee.class)
-				.addAnnotatedClass(EmployeeDetails.class)
+				.addAnnotatedClass(EmployeeDetails.class).addAnnotatedClass(Skills.class)
 		        .configure("hibernate.cfg.xml").buildSessionFactory();
 		
 		final Session session = factory.openSession();

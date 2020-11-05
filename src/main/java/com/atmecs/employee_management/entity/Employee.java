@@ -1,13 +1,18 @@
 package com.atmecs.employee_management.entity;
 
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,9 +30,23 @@ public class Employee
 	@Column(name = "mail")
 	private String mail;
 	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "empid")
+	private Set<Skills> skill;
+	
 	public int getId() 
 	{
 		return id;
+	}
+
+	public Set<Skills> getSkill() 
+	{
+		return skill;
+	}
+
+	public void setSkill(Set<Skills> skill) 
+	{
+		this.skill = skill;
 	}
 
 	public void setId(int id) 
@@ -61,9 +80,11 @@ public class Employee
 		this.mail = mail;
 	}
 
-	public Employee() 
+	public Employee(String name, String mail, Set<Skills> skill)
 	{
-
+		this.name = name;
+		this.mail = mail;
+		this.skill = skill;
 	}
-	
+
 }
