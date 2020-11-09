@@ -23,7 +23,7 @@ public class OneToManyMapping
 			
 			  Transaction transaction = session.beginTransaction();
 			  
-				Employee employee = new Employee("Jonas", "jesu.jonas@atmecs.com");
+				Employee employee = new Employee("Jonas", "nick@atmecs.com");
 
 				Skills skill1  = new Skills("Good Communication",employee);
 				Skills skill2  = new Skills("Leadership",employee);
